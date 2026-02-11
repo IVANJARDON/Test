@@ -1,0 +1,12 @@
+SELECT
+  date,
+  source,
+  campaign_id,
+  campaign_name,
+  ad_group_id,
+  ad_group_name,
+  impressions,
+  clicks,
+  cost,
+  conversions
+FROM `mx-viva-bi-sandbox.test.unified_ads`
