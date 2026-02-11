@@ -1,21 +1,21 @@
-📊 Senior Marketing Analyst – Technical Assignment
-📌 Overview
+# 📊 **Senior Marketing Analyst – Technical Assignment**
+## 📌**Overview**
 
 This project simulates a real-world marketing analytics scenario where multi-channel advertising data is unified, transformed, and analyzed to generate cross-platform performance insights.
 
 The objective was to integrate raw advertising data from Facebook Ads, Google Ads, and TikTok Ads into a unified data model and build a one-page dashboard to support strategic decision-making.
 
-📂 Data Sources
+## 📂**Data Sources**
 
 The following datasets were provided:
 
-01_facebook_ads.csv – Facebook advertising metrics
+01_facebook_ads.csv 
 
-02_google_ads.csv – Google Ads campaign data
+02_google_ads.csv 
 
-03_tiktok_ads.csv – TikTok advertising engagement
+03_tiktok_ads.csv 
 
-🗄️ Database Setup
+## 🗄️**Database Setup**
 
 All three CSV files were uploaded to a cloud database environment.
 
@@ -29,6 +29,7 @@ Standardized field names and data types.
 Created a unified marketing performance table combining all platforms.
 
 📄 SQL Script:
+```
 CREATE OR REPLACE TABLE `mx-viva-bi-sandbox.test.unified_ads` AS
 WITH
 -- Facebook Ads data
@@ -139,38 +140,47 @@ UNION ALL
 SELECT * FROM google
 UNION ALL
 SELECT * FROM tiktok;
+```
 
 🧩 Unified Data Model
 
-The unified table consolidates:
-
-Platform
-
-Campaign Name
-date,
-source,
-campaign_id,
-campaign_name,
-ad_group_id,
-ad_group_name,
-impressions,
-clicks,
-cost,
-conversions
+The unified table consolidates only relevant fields for all platforms:
+```
+SELECT
+  date,
+  source,
+  campaign_id,
+  campaign_name,
+  ad_group_id,
+  ad_group_name,
+  impressions,
+  clicks,
+  cost,
+  conversions
+FROM `mx-viva-bi-sandbox.test.unified_ads`
+```
 
 This structure enables consistent cross-platform comparison and KPI analysis.
 
-📊 Dashboard
+## 📊 **Dashboard**
 
 A one-page interactive dashboard was built in Tableau to visualize integrated performance data.
 
-Key Insights Covered:
+The Ad Performance Dashboard provides a consolidated view of multi-platform advertising performance (Facebook, Google, TikTok).
 
-Total Spend by Platform
-CPA Comparison Across Channels
-Conversion Performance
-CTR & CPC
-Platform Trends
+**Key Features:**
+
+-**Top KPIs:** Spend, Impressions, Clicks, Conversions, CPC, CPM, CTR, and CPA.
+
+-**Filters:** Platform, Campaign, Date Range, and Granularity (e.g., Daily).
+
+-**Trend Analysis:** Daily spend by platform.
+
+-**Distribution View:** Share of spend and conversions by platform.
+
+-**Platform Comparison:** Spend & CPC, Clicks & CTR, Conversions & CR.
+
+-**Campaign Table:** Detailed performance metrics with sorting and drill-down capability.
 
 🔗 Live Dashboard:
-https://public.tableau.com/app/profile/ivan.jardon/viz/IMPROVADOTEST/AdPerformanceDashboard?publish=yes
+https://public.tableau.com/app/profile/ivan.jardon/viz/AdPerformanceDashboard_17708209360260/AdPerformanceDashboard
