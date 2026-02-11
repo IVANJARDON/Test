@@ -19,7 +19,8 @@ The following datasets were provided:
 
 All three CSV files were uploaded to a cloud database environment.
 
-Cloud Database Used:
+**Cloud Database Used:**
+
 Google Big Query
 
 Data Process:
