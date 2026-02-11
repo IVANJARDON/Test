@@ -23,7 +23,7 @@ All three CSV files were uploaded to a cloud database environment.
 
 Google Big Query
 
-Data Process:
+**Data Process:**
 
 Uploaded raw CSV files into tables.
 Standardized field names and data types.
@@ -161,7 +161,7 @@ SELECT
 FROM `mx-viva-bi-sandbox.test.unified_ads`
 ```
 
-This structure enables consistent cross-platform comparison and KPI analysis.
+This structure enables consistent cross-platform comparison and KPI analysis. This query was used to import data into Tableau directly from BigQuery.
 
 ## 📊 **Dashboard**
 
